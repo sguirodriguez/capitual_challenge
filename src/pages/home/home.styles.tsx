@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { colors, TextDefault } from "../../styles/globalStyles";
+import styled from 'styled-components';
+import { colors, TextDefault } from '../../styles/globalStyles';
 
 export const Container = styled.div`
   width: 100%;

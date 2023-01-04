@@ -1,9 +1,9 @@
-import axios from "axios";
+import axios from 'axios';
 
-const BASE_URI = "http://localhost:3333";
+const BASE_URI = 'http://localhost:3333';
 
 interface RequestProps {
-  method: "GET" | "POST" | "PATCH" | "DELETE";
+  method: 'GET' | 'POST' | 'PATCH' | 'DELETE';
   path?: string;
   body?: any;
   headers?: any;
@@ -12,12 +12,7 @@ interface RequestProps {
 }
 
 const request = async ({
-  method,
-  path,
-  body,
-  headers,
-  baseURL,
-  params,
+  method, path, body, headers, baseURL, params,
 }: RequestProps) => {
   try {
     const apiURL = baseURL || BASE_URI;

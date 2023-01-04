@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
-import RoutesComponent from "./routes/index";
-import { GlobalStyle } from "./styles/globalStyles";
-import { positions, Provider } from "react-alert";
-import AlertTemplate from "react-alert-template-basic";
+import { positions, Provider } from 'react-alert';
+import AlertTemplate from 'react-alert-template-basic';
+import RoutesComponents from './routes/index';
+import { GlobalStyle } from './styles/globalStyles';
 
 function App() {
   const options = {
@@ -12,12 +12,10 @@ function App() {
   };
 
   return (
-    <>
-      <Provider template={AlertTemplate} {...options}>
-        <GlobalStyle />
-        <RoutesComponent />
-      </Provider>
-    </>
+    <Provider template={AlertTemplate} {...options}>
+      <GlobalStyle />
+      <RoutesComponents />
+    </Provider>
   );
 }
 

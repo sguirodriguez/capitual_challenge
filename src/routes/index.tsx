@@ -1,8 +1,8 @@
-import React from "react";
-import HomeController from "../pages/home/home.controller";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import HomeController from '../pages/home/home.controller';
 
-export const RoutesComponent = () => {
+export function RoutesComponent() {
   return (
     <Router>
       <Routes>
@@ -10,6 +10,6 @@ export const RoutesComponent = () => {
       </Routes>
     </Router>
   );
-};
+}
 
 export default RoutesComponent;

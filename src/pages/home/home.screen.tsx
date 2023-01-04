@@ -1,7 +1,11 @@
-import React from "react";
+import React from 'react';
 
-const HomeScreen = ({ handlers }: any) => {
-  return <></>;
-};
+function HomeScreen() {
+  return (
+    <div>
+      <span>teste</span>
+    </div>
+  );
+}
 
 export default HomeScreen;

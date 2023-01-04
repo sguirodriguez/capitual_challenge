@@ -1,12 +1,8 @@
-import React, { SetStateAction, useState } from "react";
-import HomeScreen from "./home.screen";
+import React from 'react';
+import HomeScreen from './home.screen';
 
-const HomeController: React.FC = () => {
-  // const [tabValue, setTabValue] = useState<SetStateAction<string>>("sellers");
-
-  const handlers: any = {};
-
-  return <HomeScreen handlers={handlers} />;
-};
+function HomeController() {
+  return <HomeScreen />;
+}
 
 export default HomeController;

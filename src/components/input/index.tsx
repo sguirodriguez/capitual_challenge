@@ -1,6 +1,6 @@
-import React from "react";
-import { TextField } from "@mui/material";
-import { Container } from "./styles";
+import React from 'react';
+import { TextField } from '@mui/material';
+import { Container } from './styles';
 
 interface InputProps {
   value?: any;
@@ -13,16 +13,9 @@ interface InputProps {
   type?: string;
 }
 
-const Input = ({
-  value,
-  onChange,
-  label,
-  placeholderText,
-  style,
-  disabled,
-  ref,
-  type = "text",
-}: InputProps) => {
+function Input({
+  value, onChange, label, placeholderText, style, disabled, ref, type = 'text',
+}: InputProps) {
   return (
     <Container>
       <TextField
@@ -40,6 +33,6 @@ const Input = ({
       />
     </Container>
   );
-};
+}
 
 export default Input;
