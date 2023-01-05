@@ -11,31 +11,57 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     font-family: Open-Sans, Helvetica, Sans-Serif;
   }
+
+  @font-face {
+  font-family: "Inter"; 
+  src: local("Inter-Regular"), url("../assets/fonts/Inter-Regular.ttf") format("truetype");
+  }
 `;
 
 export const TextDefault = styled.span`
-  color: #131f30;
-  font-family: sans-serif;
+  color: #111827;
+  font-family: 'Inter', sans-serif;
   font-size: 1rem;
   font-weight: 400;
   text-decoration: none;
 `;
 
-export const Title = styled(TextDefault)`
-  font-size: 1.5rem;
+export const TextLight = styled(TextDefault)`
+  font-weight: 300;
+`;
+
+export const TextMedium = styled(TextDefault)`
+  font-weight: 500;
+`;
+
+export const TextSemiBold = styled(TextDefault)`
   font-weight: 600;
-  line-height: 32px;
+`;
+
+export const TextBold = styled(TextDefault)`
+  font-weight: 700;
 `;
 
 export const colors = {
   white: '#FFFFFF',
   black: '#000',
-  gray: '#EAEFED',
+
+  grayLight: '#F3F4F6',
+  gray: '#F9FAFB',
+  graySemiMedium: '#E5E7EB',
+  grayMedium: '#6B7280',
   grayDark: '#C6C6C6',
-  background: '#F9FAF9',
-  primaryColor: '#003db6',
-  secondaryColor: '#131f30',
-  backgroundShadow: 'rgba(165, 171, 179, 0.16)',
-  inputLabel: '#A3B8B0',
-  textColor: '#000',
+
+  primaryDefault: '#111827',
+  secondaryDefault: '#0E9F6E',
+
+  redLight: '#FBD5D5',
+  red: '#E02424',
+  redDark: '#9B1C1C',
+
+  blueLight: '#E1EFFE',
+  blue: '#1E429F',
+
+  greenLight: '#DEF7EC',
+  green: '#03543F',
 };

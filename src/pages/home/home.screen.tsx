@@ -1,11 +1,7 @@
 import React from 'react';
 
 function HomeScreen() {
-  return (
-    <div>
-      <span>teste</span>
-    </div>
-  );
+  return <div />;
 }
 
 export default HomeScreen;
