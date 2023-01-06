@@ -3,7 +3,10 @@ import styled from 'styled-components';
 export const Container = styled.div`
   width: 100%;
   .input {
-    margin-top: 15px;
-    width: 100%;
+    width: 402px;
+
+    fieldset {
+      box-shadow: none;
+    }
   }
 `;

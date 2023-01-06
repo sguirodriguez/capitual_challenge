@@ -1,14 +1,20 @@
 import React from 'react';
+import Input from '../input';
 import SVGIcon from '../svgIcon';
-import { Container } from './styles';
+import { Avatar, Container, Left, Right } from './styles';
 
 function Header() {
   return (
     <Container>
-      <div className="left">
-        <SVGIcon iconName="exclamationCircle" />
-      </div>
-      <div className="right" />
+      <Left>
+        <SVGIcon iconName="logo" className="logo" width={35} />
+        <Input />
+      </Left>
+
+      <Right>
+        <SVGIcon iconName="notification" width={32} />
+        <Avatar />
+      </Right>
     </Container>
   );
 }

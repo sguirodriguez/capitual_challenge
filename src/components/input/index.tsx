@@ -1,6 +1,7 @@
 import React from 'react';
 import { TextField } from '@mui/material';
 import { Container } from './styles';
+import { theme } from '../../styles/theme/generalColors';
 
 interface InputProps {
   value?: any;
@@ -14,7 +15,14 @@ interface InputProps {
 }
 
 function Input({
-  value, onChange, label, placeholderText, style, disabled, ref, type = 'text',
+  value,
+  onChange,
+  label,
+  placeholderText,
+  style,
+  disabled,
+  ref,
+  type = 'text',
 }: InputProps) {
   return (
     <Container>
@@ -30,6 +38,16 @@ function Input({
         disabled={disabled}
         ref={ref}
         type={type}
+        InputProps={{
+          style: {
+            width: '100%',
+            borderRadius: 16,
+            height: 45,
+            backgroundColor: theme.colors.gray,
+            border: `1px solid ${theme.colors.graySemiMedium}`,
+            boxShadow: 'none',
+          },
+        }}
       />
     </Container>
   );
