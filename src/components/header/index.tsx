@@ -2,7 +2,6 @@ import React from 'react';
 import Input from '../input';
 import SVGIcon from '../svgIcon';
 import { Avatar, Container, Left, Right } from './styles';
-import avatar from '../../assets/images/backgrounds/avatar.png';
 
 function Header() {
   return (
@@ -15,7 +14,7 @@ function Header() {
 
       <Right>
         <SVGIcon iconName="notification" width={32} />
-        <Avatar src={avatar} />
+        <Avatar />
       </Right>
     </Container>
   );

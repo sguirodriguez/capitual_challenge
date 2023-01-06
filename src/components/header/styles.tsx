@@ -1,6 +1,7 @@
 import styled from 'styled-components';
-
 import { GeneralColors } from '../../typings';
+import avatar from '../../assets/images/backgrounds/avatar.png';
+import avatarSecond from '../../assets/images/backgrounds/avatar-second.png';
 
 export const Container = styled.div`
   width: 100%;
@@ -58,4 +59,11 @@ export const Avatar = styled.img`
   height: 32px;
   border-radius: 16px;
   margin-left: 12px;
+  background-image: url(${avatar});
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @media (max-width: 576px) {
+    background-image: url(${avatarSecond}) !important;
+  }
 `;
