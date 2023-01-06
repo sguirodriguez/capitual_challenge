@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
-import { theme } from '../../styles/theme/generalColors';
+import React, { ReactNode, useState, useEffect } from 'react';
+import Modal from '@mui/material/Modal';
 import SVGIcon from '../svgIcon';
+import { sidebarMenuMock } from './mock';
+
 import {
   Container,
   Left,
@@ -10,63 +12,44 @@ import {
   TextNotification,
   NotificationMessage,
   Divider,
+  ModalContainer,
 } from './styles';
 
-function SidebarMenu() {
-  const [subPages, setSubPages] = useState<any>();
+type SidebarMenuProps = {
+  isMenuMobileVisible: boolean;
+  setIsMenuMobileVisible: (value: boolean) => any;
+};
 
-  const sidebarMenuMock = [
-    {
-      title: 'Overview',
-      icon: 'overview',
-      color: theme.colors.secondaryDefault,
-    },
-    {
-      title: 'Pages',
-      icon: 'pages',
-      iconWidth: 14,
-      iconHeight: 19,
-      subpages: ['Testing'],
-    },
-    {
-      title: 'Sales',
-      icon: 'shopping',
-      iconWidth: 17,
-      iconHeight: 19,
-      subpages: ['Product List', 'Briling', 'Invoice'],
-    },
-    {
-      title: 'Messages',
-      icon: 'inbox',
-      iconWidth: 17,
-      iconHeight: 17,
-    },
-    {
-      title: 'Authentication',
-      icon: 'lock',
-      iconWidth: 17,
-      iconHeight: 19,
-      subpages: ['Testing'],
-    },
-    {
-      title: 'Docs',
-      icon: 'clipboard',
-      iconWidth: 14,
-      iconHeight: 18,
-    },
-    {
-      title: 'Components',
-      icon: 'collection',
-      iconWidth: 19,
-      iconHeight: 16,
-    },
-    {
-      title: 'Help',
-      icon: 'support',
-      iconWidth: 19,
-      iconHeight: 16,
-    },
-  ];
+function SidebarMenu({ isMenuMobileVisible, setIsMenuMobileVisible }: SidebarMenuProps) {
+  const [subPages, setSubPages] = useState<any>();
+  const [windowWidth, setWindowWidth] = useState<number>(1024);
+
+  const handleClose = () => setIsMenuMobileVisible(false);
+
+  const sizeOfThings = () => {
+    const width = window.innerWidth;
+
+    return setWindowWidth(width);
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', () => {
+      sizeOfThings();
+    });
+    sizeOfThings();
+  }, []);
+
+  const translatorContainer = (children: ReactNode) => {
+    if (windowWidth <= 768) {
+      return (
+        <Modal open={isMenuMobileVisible} onClose={handleClose}>
+          <ModalContainer>{children}</ModalContainer>
+        </Modal>
+      );
+    }
+
+    return <Container>{children}</Container>;
+  };
 
   const handleClick = async (value: string) => {
     const arrayValues = subPages;
@@ -113,32 +96,11 @@ function SidebarMenu() {
   };
 
   return (
-    <Container>
-      {sidebarMenuMock?.map((item, index) => {
-        if (item?.title === 'Messages') {
-          return (
-            <Row key={item?.icon} onClick={() => item?.subpages && handleClick(item?.title)}>
-              <Left>
-                <SVGIcon
-                  iconName={item?.icon}
-                  width={24 || item?.iconWidth}
-                  height={24 || item?.iconHeight}
-                  color={item?.color}
-                />
-                <Title style={{ color: item?.color }}>{item?.title}</Title>
-              </Left>
-
-              <NotificationMessage>
-                <TextNotification>1</TextNotification>
-              </NotificationMessage>
-            </Row>
-          );
-        }
-
-        if (index === 5) {
-          return (
-            <>
-              <Divider className="divider" />
+    <>
+      {translatorContainer(
+        sidebarMenuMock?.map((item, index) => {
+          if (item?.title === 'Messages') {
+            return (
               <Row key={item?.icon} onClick={() => item?.subpages && handleClick(item?.title)}>
                 <Left>
                   <SVGIcon
@@ -149,31 +111,55 @@ function SidebarMenu() {
                   />
                   <Title style={{ color: item?.color }}>{item?.title}</Title>
                 </Left>
+
+                <NotificationMessage>
+                  <TextNotification>1</TextNotification>
+                </NotificationMessage>
               </Row>
+            );
+          }
+
+          if (index === 5) {
+            return (
+              <>
+                <Divider className="divider" />
+                <Row key={item?.icon} onClick={() => item?.subpages && handleClick(item?.title)}>
+                  <Left>
+                    <SVGIcon
+                      iconName={item?.icon}
+                      width={24 || item?.iconWidth}
+                      height={24 || item?.iconHeight}
+                      color={item?.color}
+                    />
+                    <Title style={{ color: item?.color }}>{item?.title}</Title>
+                  </Left>
+                </Row>
+              </>
+            );
+          }
+
+          return (
+            <>
+              <Row key={item?.icon} onClick={() => item?.subpages && handleClick(item?.title)}>
+                <Left>
+                  <SVGIcon
+                    iconName={item?.icon}
+                    width={24 || item?.iconWidth}
+                    height={24 || item?.iconHeight}
+                    color={item?.color}
+                  />
+                  <Title style={{ color: item?.color }}>{item?.title}</Title>
+                </Left>
+
+                {item?.subpages && translatorArrow(item)}
+              </Row>
+              {item?.subpages && verifyInArrayAndReturnSubItem(item)}
             </>
           );
-        }
-
-        return (
-          <>
-            <Row key={item?.icon} onClick={() => item?.subpages && handleClick(item?.title)}>
-              <Left>
-                <SVGIcon
-                  iconName={item?.icon}
-                  width={24 || item?.iconWidth}
-                  height={24 || item?.iconHeight}
-                  color={item?.color}
-                />
-                <Title style={{ color: item?.color }}>{item?.title}</Title>
-              </Left>
-
-              {item?.subpages && translatorArrow(item)}
-            </Row>
-            {item?.subpages && verifyInArrayAndReturnSubItem(item)}
-          </>
-        );
-      })}
-    </Container>
+          // eslint-disable-next-line @typescript-eslint/comma-dangle
+        })
+      )}
+    </>
   );
 }
 

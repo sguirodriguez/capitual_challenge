@@ -2,6 +2,18 @@ import styled from 'styled-components';
 import { TextDefault, TextMedium } from '../../styles/globalStyles';
 import { GeneralColors } from '../../typings';
 
+export const ModalContainer = styled.div`
+  width: 250px;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  border: none !important;
+  background-color: white;
+  padding-top: 20px;
+  padding-left: 12px;
+  padding-right: 12px;
+`;
+
 export const Container = styled.div`
   width: 250px;
   height: calc(100% - 70px);

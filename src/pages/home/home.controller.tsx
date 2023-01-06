@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import HomeScreen from './home.screen';
 
 function HomeController() {
-  return <HomeScreen />;
+  const [isMenuMobileVisible, setIsMenuMobileVisible] = useState(false);
+
+  const handlers: any = {
+    isMenuMobileVisible,
+    setIsMenuMobileVisible,
+  };
+  return <HomeScreen handlers={handlers} />;
 }
 
 export default HomeController;

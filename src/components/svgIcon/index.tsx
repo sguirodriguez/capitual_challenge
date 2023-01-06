@@ -28,6 +28,7 @@ type SVGIconProps = {
   color?: string;
   iconName: string;
   style?: CSSProperties;
+  onClick?: any;
 };
 
 function SVGIcon(props: SVGIconProps) {
@@ -38,6 +39,7 @@ function SVGIcon(props: SVGIconProps) {
     iconName,
     style,
     height = 20,
+    onClick,
   } = props;
 
   const translateIcon: any = {
@@ -59,7 +61,14 @@ function SVGIcon(props: SVGIconProps) {
   };
 
   return (
-    <IconContainer className={className} width={width} height={height} color={color} style={style}>
+    <IconContainer
+      className={className}
+      width={width}
+      height={height}
+      color={color}
+      style={style}
+      onClick={onClick}
+    >
       <ReactSVG src={translateIcon[iconName]} />
     </IconContainer>
   );
