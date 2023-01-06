@@ -1,10 +1,16 @@
 import React from 'react';
+import SVGIcon from '../svgIcon';
 import { Container } from './styles';
 
-// interface HeaderProps {}
-
 function Header() {
-  return <Container />;
+  return (
+    <Container>
+      <div className="left">
+        <SVGIcon iconName="logo" />
+      </div>
+      <div className="right" />
+    </Container>
+  );
 }
 
 export default Header;
