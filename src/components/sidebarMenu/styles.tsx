@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { TextMedium } from '../../styles/globalStyles';
+import { TextDefault, TextMedium } from '../../styles/globalStyles';
 import { GeneralColors } from '../../typings';
 
 export const Container = styled.div`
@@ -47,4 +47,38 @@ export const Left = styled.div`
 export const Title = styled(TextMedium)`
   line-height: 150%;
   margin-left: 18px;
+`;
+
+export const SubItem = styled.div`
+  width: 100%;
+  height: 32px;
+  margin-top: 10px;
+  padding-left: 34px;
+
+  &:first-of-type {
+    margin-top: 0px;
+  }
+`;
+
+export const NotificationMessage = styled.div`
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: ${({ theme }: GeneralColors) => theme.colors.redLight};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const TextNotification = styled(TextDefault)`
+  font-size: 12px;
+  line-height: 150%;
+`;
+
+export const Divider = styled.div`
+  margin-top: 24px;
+  margin-left: -12px;
+  width: 250px;
+  height: 1px;
+  background-color: ${({ theme }: GeneralColors) => theme.colors.graySemiMedium};
 `;
