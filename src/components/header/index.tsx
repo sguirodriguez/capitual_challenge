@@ -6,7 +6,7 @@ function Header() {
   return (
     <Container>
       <div className="left">
-        <SVGIcon iconName="logo" />
+        <SVGIcon iconName="exclamationCircle" />
       </div>
       <div className="right" />
     </Container>
