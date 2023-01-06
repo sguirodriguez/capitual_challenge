@@ -7,13 +7,13 @@ function Header() {
   return (
     <Container>
       <Left>
-        <SVGIcon iconName="logo" className="logo" width={35} />
-        <SVGIcon iconName="menu" className="menu" width={20} />
+        <SVGIcon iconName="logo" className="logo" width={28} height={33} />
+        <SVGIcon iconName="menu" className="menu" width={16} height={16} />
         <Input className="input-search" />
       </Left>
 
       <Right>
-        <SVGIcon iconName="notification" width={32} />
+        <SVGIcon iconName="notification" width={16.8} height={19.2} />
         <Avatar />
       </Right>
     </Container>

@@ -12,6 +12,7 @@ import search from './images/icons/search.svg';
 import shopping from './images/icons/shopping.svg';
 import support from './images/icons/support.svg';
 import exclamationCircle from './images/icons/exclamation-circle.svg';
+import pages from './images/icons/pages.svg';
 
 export {
   arrowDown,
@@ -28,4 +29,5 @@ export {
   shopping,
   support,
   exclamationCircle,
+  pages,
 };

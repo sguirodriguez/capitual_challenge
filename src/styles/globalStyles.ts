@@ -9,7 +9,7 @@ export const GlobalStyle = createGlobalStyle`
   html,body {
     margin: 0;
     padding: 0;
-    font-family: Open-Sans, Helvetica, Sans-Serif;
+    font-family: 'Inter', Helvetica, Sans-Serif;
   }
 
   @font-face {
@@ -26,18 +26,34 @@ export const TextDefault = styled.span`
   text-decoration: none;
 `;
 
-export const TextLight = styled(TextDefault)`
+export const TextLight = styled.span`
+  color: #111827;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  text-decoration: none;
   font-weight: 300;
 `;
 
-export const TextMedium = styled(TextDefault)`
+export const TextMedium = styled.span`
+  color: #111827;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  text-decoration: none;
   font-weight: 500;
 `;
 
-export const TextSemiBold = styled(TextDefault)`
+export const TextSemiBold = styled.span`
+  color: #111827;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  text-decoration: none;
   font-weight: 600;
 `;
 
-export const TextBold = styled(TextDefault)`
+export const TextBold = styled.span`
+  color: #111827;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  text-decoration: none;
   font-weight: 700;
 `;

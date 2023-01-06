@@ -16,6 +16,7 @@ import {
   shopping,
   support,
   exclamationCircle,
+  pages,
 } from '../../assets';
 import { theme } from '../../styles/theme/generalColors';
 import { IconContainer } from './styles';
@@ -23,13 +24,21 @@ import { IconContainer } from './styles';
 type SVGIconProps = {
   className?: string;
   width?: number;
+  height?: number;
   color?: string;
   iconName: string;
   style?: CSSProperties;
 };
 
 function SVGIcon(props: SVGIconProps) {
-  const { className, width = 20, color = theme.colors.primaryDefault, iconName, style } = props;
+  const {
+    className,
+    width = 20,
+    color = theme.colors.primaryDefault,
+    iconName,
+    style,
+    height = 20,
+  } = props;
 
   const translateIcon: any = {
     arrowDown,
@@ -46,10 +55,11 @@ function SVGIcon(props: SVGIconProps) {
     shopping,
     support,
     exclamationCircle,
+    pages,
   };
 
   return (
-    <IconContainer className={className} width={width} color={color} style={style}>
+    <IconContainer className={className} width={width} height={height} color={color} style={style}>
       <ReactSVG src={translateIcon[iconName]} />
     </IconContainer>
   );

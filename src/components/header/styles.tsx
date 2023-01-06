@@ -14,6 +14,10 @@ export const Container = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: 576px) {
+    padding: 0px 13px;
+  }
 `;
 
 export const Left = styled.div`
