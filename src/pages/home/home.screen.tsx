@@ -1,7 +1,13 @@
 import React from 'react';
+import Header from '../../components/header';
+import { ContainerHome } from './home.styles';
 
 function HomeScreen() {
-  return <div />;
+  return (
+    <ContainerHome>
+      <Header />
+    </ContainerHome>
+  );
 }
 
 export default HomeScreen;

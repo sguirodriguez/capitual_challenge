@@ -2,6 +2,7 @@ import React from 'react';
 
 import { positions, Provider } from 'react-alert';
 import AlertTemplate from 'react-alert-template-basic';
+import ThemeProvider from './context/theme';
 import RoutesComponents from './routes/index';
 import { GlobalStyle } from './styles/globalStyles';
 
@@ -13,8 +14,10 @@ function App() {
 
   return (
     <Provider template={AlertTemplate} {...options}>
-      <GlobalStyle />
-      <RoutesComponents />
+      <ThemeProvider>
+        <GlobalStyle />
+        <RoutesComponents />
+      </ThemeProvider>
     </Provider>
   );
 }
