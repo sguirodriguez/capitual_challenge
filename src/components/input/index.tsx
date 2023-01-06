@@ -2,6 +2,7 @@ import React from 'react';
 import { TextField } from '@mui/material';
 import { Container } from './styles';
 import { theme } from '../../styles/theme/generalColors';
+import SVGIcon from '../svgIcon';
 
 interface InputProps {
   value?: any;
@@ -12,6 +13,8 @@ interface InputProps {
   disabled?: boolean;
   ref?: any;
   type?: string;
+  placeholder?: string;
+  className?: string;
 }
 
 function Input({
@@ -23,9 +26,12 @@ function Input({
   disabled,
   ref,
   type = 'text',
+  placeholder = 'Search',
+  className,
 }: InputProps) {
   return (
-    <Container>
+    <Container className={className}>
+      <SVGIcon iconName="search" className="search" width={20} color={theme.colors.grayDarker} />
       <TextField
         id="outlined-basic"
         variant="outlined"
@@ -39,6 +45,7 @@ function Input({
         ref={ref}
         type={type}
         InputProps={{
+          placeholder,
           style: {
             width: '100%',
             borderRadius: 16,
@@ -46,6 +53,7 @@ function Input({
             backgroundColor: theme.colors.gray,
             border: `1px solid ${theme.colors.graySemiMedium}`,
             boxShadow: 'none',
+            paddingLeft: 24,
           },
         }}
       />

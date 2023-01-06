@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import { GeneralColors } from '../../typings';
 
 export const Container = styled.div`
@@ -19,8 +20,30 @@ export const Left = styled.div`
   flex-direction: row;
   align-items: center;
 
+  @media (max-width: 768px) {
+    .menu {
+      display: block !important;
+    }
+    .input-search {
+      display: none;
+    }
+    .logo {
+      margin-right: 24px !important;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .logo {
+      display: none;
+    }
+  }
+
   .logo {
     margin-right: 32px;
+  }
+
+  .menu {
+    display: none;
   }
 `;
 
@@ -30,10 +53,9 @@ export const Right = styled.div`
   align-items: center;
 `;
 
-export const Avatar = styled.div`
+export const Avatar = styled.img`
   width: 32px;
   height: 32px;
   border-radius: 16px;
-  background-color: url({});
   margin-left: 12px;
 `;
