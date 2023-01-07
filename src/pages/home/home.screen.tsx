@@ -1,8 +1,10 @@
 import React from 'react';
 import Chart from '../../components/chart';
 import Header from '../../components/header';
+import LatestCustomers from '../../components/latestCustomers';
 import SidebarMenu from '../../components/sidebarMenu';
-import { ContainerHome, MenuAndMain, Main } from './home.styles';
+import TopProducts from '../../components/topProducts';
+import { ContainerHome, MenuAndMain, Main, GridContainer } from './home.styles';
 
 function HomeScreen({ handlers }: any) {
   const { isMenuMobileVisible, setIsMenuMobileVisible } = handlers;
@@ -18,8 +20,13 @@ function HomeScreen({ handlers }: any) {
           isMenuMobileVisible={isMenuMobileVisible}
           setIsMenuMobileVisible={setIsMenuMobileVisible}
         />
+
         <Main>
           <Chart />
+          <GridContainer>
+            <LatestCustomers className="left" />
+            <TopProducts className="right" />
+          </GridContainer>
         </Main>
       </MenuAndMain>
     </ContainerHome>

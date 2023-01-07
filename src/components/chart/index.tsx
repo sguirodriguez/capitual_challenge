@@ -134,7 +134,7 @@ function Chart() {
       <ResponsiveContainer width="100%" height="100%">
         <LineChart
           width={510}
-          height={300}
+          height={100}
           data={arrayOrdened}
           margin={{
             top: 40,

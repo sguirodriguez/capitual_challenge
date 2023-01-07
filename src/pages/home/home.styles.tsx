@@ -20,3 +20,30 @@ export const Main = styled.div`
   background-color: ${({ theme }: GeneralColors) => theme.colors.graySemiMedium};
   padding: 16px;
 `;
+
+export const GridContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  margin-top: 16px;
+
+  @media (max-width: 1120px) {
+    grid-template-columns: 1fr;
+  }
+
+  .left {
+    width: auto;
+    margin-right: 16px !important;
+
+    @media (max-width: 1120px) {
+      margin-right: 0px !important;
+    }
+  }
+
+  .right {
+    width: auto;
+
+    @media (max-width: 1120px) {
+      margin-top: 16px !important;
+    }
+  }
+`;
