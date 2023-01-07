@@ -10,6 +10,7 @@ export const theme = {
     grayDark: '#9CA3AF',
     graySemiDarker: '#4B5563',
     grayDarker: '#6B7280',
+    grayAlternative: '#71717A',
 
     primaryDefault: '#111827',
     secondaryDefault: '#0E9F6E',

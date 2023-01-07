@@ -10,6 +10,7 @@ export type GeneralColors = {
       grayDark: string;
       graySemiDarker: string;
       grayDarker: string;
+      grayAlternative: string;
       primaryDefault: string;
       secondaryDefault: string;
       redLight: string;

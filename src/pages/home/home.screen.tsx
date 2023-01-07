@@ -3,6 +3,7 @@ import Chart from '../../components/chart';
 import Header from '../../components/header';
 import LatestCustomers from '../../components/latestCustomers';
 import SidebarMenu from '../../components/sidebarMenu';
+import TableTransactions from '../../components/table';
 import TopProducts from '../../components/topProducts';
 import { ContainerHome, MenuAndMain, Main, GridContainer } from './home.styles';
 
@@ -27,6 +28,8 @@ function HomeScreen({ handlers }: any) {
             <LatestCustomers className="left" />
             <TopProducts className="right" />
           </GridContainer>
+
+          <TableTransactions />
         </Main>
       </MenuAndMain>
     </ContainerHome>
