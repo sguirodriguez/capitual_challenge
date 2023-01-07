@@ -47,3 +47,24 @@ export const GridContainer = styled.div`
     }
   }
 `;
+
+export const Footer = styled.div`
+  width: 100%;
+  min-height: 120px;
+  background-color: ${({ theme }: GeneralColors) => theme.colors.white};
+  border-radius: 16px;
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .footer-text {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 150%;
+    color: ${({ theme }: GeneralColors) => theme.colors.grayDarker};
+    text-align: center;
+  }
+`;

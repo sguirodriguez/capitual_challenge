@@ -50,6 +50,93 @@ export const ContainerTableHeader = styled(TableRow)`
 
     border-bottom: 1px solid ${({ theme }: GeneralColors) => theme.colors.graySemiMedium};
   }
+
+  .header-amount {
+    @media (max-width: 660px) {
+      display: none;
+    }
+  }
+  .header-status {
+    @media (max-width: 660px) {
+      display: none;
+    }
+  }
 `;
 
-export const ContainerTableBody = styled(TableRow)``;
+export const ContainerTableBody = styled(TableRow)`
+  height: 54px;
+  .transaction {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 20px;
+    color: ${({ theme }: GeneralColors) => theme.colors.primaryDefault};
+
+    @media (max-width: 660px) {
+      font-size: 0.7rem;
+    }
+    .text-bold {
+      font-family: 'Inter', sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 0.875rem;
+      line-height: 20px;
+      color: ${({ theme }: GeneralColors) => theme.colors.primaryDefault};
+      @media (max-width: 660px) {
+        font-size: 0.7rem;
+      }
+    }
+  }
+  .date-and-time {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 20px;
+    color: ${({ theme }: GeneralColors) => theme.colors.grayDarker};
+    @media (max-width: 660px) {
+      font-size: 0.7rem;
+    }
+  }
+  .amount {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: ${({ theme }: GeneralColors) => theme.colors.primaryDefault};
+
+    @media (max-width: 660px) {
+      display: none;
+    }
+  }
+
+  .status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (max-width: 660px) {
+      display: none;
+    }
+    .component {
+      width: 83px;
+      height: 22px;
+      background: ${({ theme }: GeneralColors) => theme.colors.greenLight};
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .text {
+        font-family: 'Inter', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 150%;
+        color: ${({ theme }: GeneralColors) => theme.colors.green};
+      }
+    }
+  }
+`;

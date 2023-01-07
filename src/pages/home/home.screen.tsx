@@ -5,7 +5,7 @@ import LatestCustomers from '../../components/latestCustomers';
 import SidebarMenu from '../../components/sidebarMenu';
 import TableTransactions from '../../components/table';
 import TopProducts from '../../components/topProducts';
-import { ContainerHome, MenuAndMain, Main, GridContainer } from './home.styles';
+import { ContainerHome, MenuAndMain, Main, GridContainer, Footer } from './home.styles';
 
 function HomeScreen({ handlers }: any) {
   const { isMenuMobileVisible, setIsMenuMobileVisible } = handlers;
@@ -30,6 +30,10 @@ function HomeScreen({ handlers }: any) {
           </GridContainer>
 
           <TableTransactions />
+
+          <Footer>
+            <span className="footer-text">© 2021 Themesberg, LLC. All rights reserved.</span>
+          </Footer>
         </Main>
       </MenuAndMain>
     </ContainerHome>

@@ -40,7 +40,7 @@ function TopProducts({ className }: TopProductsProps) {
           <Row>
             <div className="left">
               <TitleInfo>{item?.name}</TitleInfo>
-              <TextInfo>{truncateText(item?.description, 40)}</TextInfo>
+              <TextInfo>{truncateText(item?.description, 32)}</TextInfo>
             </div>
 
             <div className="right">
