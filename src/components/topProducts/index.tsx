@@ -44,7 +44,7 @@ function TopProducts({ className }: TopProductsProps) {
             </div>
 
             <div className="right">
-              <TitleInfo>{item?.totalSales}</TitleInfo>
+              <TitleInfo>{Number(item?.totalSales).toFixed()}</TitleInfo>
               <TextInfo style={{ fontSize: '1rem', marginLeft: 5 }}>Sales</TextInfo>
             </div>
           </Row>

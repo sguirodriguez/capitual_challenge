@@ -46,7 +46,7 @@ function LatestCustomers({ className }: LatestCustomersProps) {
             </div>
             <div>
               <TitleInfo>$</TitleInfo>
-              <TitleInfo>{item?.lastPurchaseValue}</TitleInfo>
+              <TitleInfo>{Number(item?.lastPurchaseValue).toFixed()}</TitleInfo>
             </div>
           </Row>
         );

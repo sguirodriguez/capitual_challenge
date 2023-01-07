@@ -15,6 +15,10 @@ export const Container = styled.div`
   border-radius: 16px;
   padding: 24px;
   overflow-x: auto;
+
+  @media (max-width: 576px) {
+    padding: 16px;
+  }
 `;
 
 export const Title = styled(TextSemiBold)`
