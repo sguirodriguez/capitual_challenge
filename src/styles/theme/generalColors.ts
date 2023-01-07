@@ -8,6 +8,7 @@ export const theme = {
     graySemiMedium: '#E5E7EB',
     grayMedium: '#C6C6C6',
     grayDark: '#9CA3AF',
+    graySemiDarker: '#4B5563',
     grayDarker: '#6B7280',
 
     primaryDefault: '#111827',

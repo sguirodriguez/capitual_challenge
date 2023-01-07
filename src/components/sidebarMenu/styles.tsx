@@ -8,7 +8,7 @@ export const ModalContainer = styled.div`
   position: absolute;
   left: 0;
   border: none !important;
-  background-color: white;
+  background-color: ${({ theme }: GeneralColors) => theme.colors.white};
   padding-top: 20px;
   padding-left: 12px;
   padding-right: 12px;
@@ -16,7 +16,7 @@ export const ModalContainer = styled.div`
 
 export const Container = styled.div`
   width: 250px;
-  height: calc(100% - 70px);
+  min-height: 100% !important;
   background-color: ${({ theme }: GeneralColors) => theme.colors.white};
   border-right: 1px solid ${({ theme }: GeneralColors) => theme.colors.graySemiMedium};
   padding-top: 22px;

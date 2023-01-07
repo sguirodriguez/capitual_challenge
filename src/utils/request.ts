@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URI = 'http://localhost:3333';
+const BASE_URI = 'https://633740935327df4c43d22bb2.mockapi.io/api/v1/';
 
 interface RequestProps {
   method: 'GET' | 'POST' | 'PATCH' | 'DELETE';
@@ -11,9 +11,7 @@ interface RequestProps {
   params?: any;
 }
 
-const request = async ({
-  method, path, body, headers, baseURL, params,
-}: RequestProps) => {
+const request = async ({ method, path, body, headers, baseURL, params }: RequestProps) => {
   try {
     const apiURL = baseURL || BASE_URI;
 
