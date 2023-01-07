@@ -13,8 +13,17 @@ import { Container, ContainerTableBody, ContainerTableHeader, Description, Title
 import { theme } from '../../styles/theme/generalColors';
 import request from '../../utils/request';
 
+type TransactionsData = Array<{
+  amount: string;
+  completed: boolean;
+  createdAt: string;
+  firstName: string;
+  id: string;
+  lastName: string;
+}>;
+
 function TableTransactions() {
-  const [transactions, setTransactions] = useState<any[]>();
+  const [transactions, setTransactions] = useState<TransactionsData>();
   const alert = useAlert();
 
   const getTransactions = async () => {

@@ -8,8 +8,16 @@ type TopProductsProps = {
   className?: string;
 };
 
+type ProductsData = Array<{
+  createdAt: string;
+  description: string;
+  id: string;
+  name: string;
+  totalSales: string;
+}>;
+
 function TopProducts({ className }: TopProductsProps) {
-  const [products, setProducts] = useState<any[]>();
+  const [products, setProducts] = useState<ProductsData>();
   const alert = useAlert();
 
   const getProducts = async () => {

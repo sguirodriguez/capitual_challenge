@@ -27,8 +27,12 @@ import {
   ValueToolTip,
 } from './styles';
 
+type ChartData = Array<{ fullDate: string; month: string; order: Date; sales: number }>;
+
+type ObjectResponseApi = { createdAt: string; id: string; price: string; productName: string };
+
 function Chart() {
-  const [chartData, setChartData] = useState<any>(null);
+  const [chartData, setChartData] = useState<ChartData | null>(null);
   const [windowWidth, setWindowWidth] = useState<number>(1024);
   const alert = useAlert();
 
@@ -86,7 +90,7 @@ function Chart() {
       return;
     }
 
-    const newArray: any = data?.map((item: any) => ({
+    const newArray: ChartData = data?.map((item: ObjectResponseApi) => ({
       month: checkDate(item?.createdAt, 'month'),
       sales: Number(item?.price),
       fullDate: checkDate(item?.createdAt, 'year'),
@@ -95,13 +99,12 @@ function Chart() {
 
     setChartData(newArray);
   };
-
   useEffect(() => {
     getSales();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  function orderArray(array: any) {
+  function orderArray(array: ChartData | null) {
     return array?.sort((a: any, b: any) => a.order - b.order);
   }
 

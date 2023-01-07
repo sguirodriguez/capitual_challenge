@@ -7,8 +7,28 @@ type LatestCustomersProps = {
   className?: string;
 };
 
+type CustomerData = Array<{
+  avatar: string;
+  createdAt: string;
+  email: string;
+  id: string;
+  lastPurchaseDate: string;
+  lastPurchaseValue: string;
+  name: string;
+}>;
+
+type CustomerObject = {
+  avatar: string;
+  createdAt: string;
+  email: string;
+  id: string;
+  lastPurchaseDate: string;
+  lastPurchaseValue: string;
+  name: string;
+};
+
 function LatestCustomers({ className }: LatestCustomersProps) {
-  const [customers, setCustomers] = useState<any[]>();
+  const [customers, setCustomers] = useState<CustomerData>();
   const alert = useAlert();
 
   const getCustomers = async () => {
@@ -30,7 +50,7 @@ function LatestCustomers({ className }: LatestCustomersProps) {
     <Container className={className}>
       <Title>Latest Customers</Title>
 
-      {customers?.map((item: any, index: number) => {
+      {customers?.map((item: CustomerObject, index: number) => {
         if (index > 5) {
           return;
         }

@@ -1,4 +1,5 @@
 import styled, { createGlobalStyle } from 'styled-components';
+import { theme } from './theme/generalColors';
 
 export const GlobalStyle = createGlobalStyle`
 *{
@@ -15,7 +16,7 @@ export const GlobalStyle = createGlobalStyle`
 `;
 
 export const TextDefault = styled.span`
-  color: #111827;
+  color: ${theme.colors.primaryDefault};
   font-family: Inter, sans-serif;
   font-size: 1rem;
   font-weight: 400;
@@ -23,7 +24,7 @@ export const TextDefault = styled.span`
 `;
 
 export const TextLight = styled.span`
-  color: #111827;
+  color: ${theme.colors.primaryDefault};
   font-family: 'Inter', sans-serif;
   font-size: 1rem;
   text-decoration: none;
@@ -31,7 +32,7 @@ export const TextLight = styled.span`
 `;
 
 export const TextMedium = styled.span`
-  color: #111827;
+  color: ${theme.colors.primaryDefault};
   font-family: 'Inter', sans-serif;
   font-size: 1rem;
   text-decoration: none;
@@ -39,7 +40,7 @@ export const TextMedium = styled.span`
 `;
 
 export const TextSemiBold = styled.span`
-  color: #111827;
+  color: ${theme.colors.primaryDefault};
   font-family: 'Inter', sans-serif;
   font-size: 1rem;
   text-decoration: none;
@@ -47,7 +48,7 @@ export const TextSemiBold = styled.span`
 `;
 
 export const TextBold = styled.span`
-  color: #111827;
+  color: ${theme.colors.primaryDefault};
   font-family: 'Inter', sans-serif;
   font-size: 1rem;
   text-decoration: none;
